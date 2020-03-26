@@ -7,19 +7,19 @@ void main_cas(), cas1(), wcas();
 void bill();
 /*Sobre el programa*/
 void sobre();
-/*Menú del medicamento*/
+/*MenÃº del medicamento*/
 void medicina();
 void medi_venta(), balance(), update_balance();
 void medi_entrada(), medi_buscar(), remanente();
-/*Menú de proveedor*/
+/*MenÃº de proveedor*/
 void proveedor();
 void prove_entrada(), prove_lista(), prove_actual();
 void buscar(), buscar_id(), buscar_nombre();
-/*Menú del cliente*/
+/*MenÃº del cliente*/
 void cliente();
 void clien_buscar(), buscar_cid(), buscar_cnombre();
 void clien_entrada(), clien_lista(), clien_actual();
-/*Menú de Reporte*/
+/*MenÃº de Reporte*/
 void reporte_menu();
 void reporte();
 void venta_rpt(), venta_rpt_daily();
@@ -181,7 +181,7 @@ int getclien_id(){
     return info_c.clien_id+1;
 }
 
-/*                           Bienvenida y menú                            */
+/*                           Bienvenida y menÃº                            */
 /*========================== Pantalla de Inicio ==========================*/
 void bienvenida(){
     system("cls");
@@ -193,7 +193,7 @@ void bienvenida(){
 		Sleep(40);
 }
 
-/*============================ Menú Principal ===========================*/
+/*============================ MenÃº Principal ===========================*/
 void main_menu(){
     int op;
     char ch, o=162;
