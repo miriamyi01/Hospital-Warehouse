@@ -2,15 +2,15 @@
 #include<time.h>
 #include<stdlib.h>
 
-/*Menú de proveedor*/
+/*MenÃº de proveedor*/
 void proveedor();
 void prove_entrada(), prove_lista(), prove_actual();
 void buscar(), buscar_id(), buscar_nombre();
-/*Menú del cliente*/
+/*MenÃº del cliente*/
 void cliente();
 void clien_buscar(), buscar_cid(), buscar_cnombre();
 void clien_entrada(), clien_lista(), clien_actual();
-/*Menú del medicamento*/
+/*MenÃº del medicamento*/
 void medicina();
 void medi_venta(), balance(), update_balance();
 void medi_entrada(), medi_buscar(), remanente();
@@ -18,7 +18,7 @@ void medi_entrada(), medi_buscar(), remanente();
 void ticket();
 /*Sobre el programa*/
 void sobre();
-/*Menú de Reporte*/
+/*MenÃº de Reporte*/
 void reporte_menu();
 void reporte();
 void venta_rpt(), venta_rpt_daily();
@@ -179,7 +179,7 @@ int getclien_id(){
     return info_c.clien_id+1;
 }
 
-/*                           Bienvenida y menú                            */
+/*                           Bienvenida y menÃº                            */
 /*========================== Pantalla de Inicio ==========================*/
 void bienvenida(){
     system("cls");
@@ -190,7 +190,7 @@ void bienvenida(){
 		printf("\n\tCargando......");
 }
 
-/*============================ Menú Principal ===========================*/
+/*============================ MenÃº Principal ===========================*/
 void main_menu(){
     int op;
     char ch, o=162;
@@ -249,7 +249,7 @@ int main(){
 }
 
 /*============================== Proveedor ==============================*/
-/*========================== Menú de Proveedor ==========================*/
+/*========================== MenÃº de Proveedor ==========================*/
 void proveedor(){
     int opp, u=163;
     do{
@@ -284,7 +284,7 @@ void proveedor(){
 }
 
 /*============================== Cliente ==============================*/
-/*========================== Menú de Cliente ==========================*/
+/*========================== MenÃº de Cliente ==========================*/
 void cliente(){
     int opc, u=163;
     do{
@@ -319,7 +319,7 @@ void cliente(){
 }
 
 /*============================== Cliente ==============================*/
-/*========================== Menú de Cliente ==========================*/
+/*========================== MenÃº de Cliente ==========================*/
 void medicina(){
     int opm, u=163;
     do{
@@ -353,7 +353,7 @@ void medicina(){
     while(opm!=5);
 }
 
-/*======================= Menú Sobre el Programa ======================*/
+/*======================= MenÃº Sobre el Programa ======================*/
 void sobre(){
     int c;
     system("cls");
