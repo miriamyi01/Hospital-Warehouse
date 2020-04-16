@@ -4,15 +4,15 @@
 #include<time.h>
 #include<windows.h>
 
-/*Menú de proveedor*/
+/*MenÃº de proveedor*/
 void proveedor();
 void prove_entrada(), prove_lista(), prove_actual();
 void buscar(), buscar_id(), buscar_nombre();
-/*Menú del cliente*/
+/*MenÃº del cliente*/
 void cliente();
 void clien_buscar(), buscar_cid(), buscar_cnombre();
 void clien_entrada(), clien_lista(), clien_actual();
-/*Menú del medicamento*/
+/*MenÃº del medicamento*/
 void medicina();
 void medi_venta(), almacen(), actul_almacen();
 void medi_entrada(), medi_buscar(), remanente();
@@ -20,7 +20,7 @@ void medi_entrada(), medi_buscar(), remanente();
 void ticket();
 /*Sobre el programa*/
 void sobre();
-/*Menú de Reporte*/
+/*MenÃº de Reporte*/
 void reporte_menu();
 void reporte();
 void venta_rpt(), venta_rpt_diaria();
@@ -180,7 +180,7 @@ int getclien_id(){
     return info_c.clien_id+1;
 }
 
-/*                           Bienvenida y menú                            */
+/*                           Bienvenida y menÃº                            */
 /*========================== Pantalla de Inicio ==========================*/
 void bienvenida(){
     system("cls");
@@ -191,7 +191,7 @@ void bienvenida(){
 		printf("\n\tCargando......");
 }
 
-/*============================ Menú Principal ===========================*/
+/*============================ MenÃº Principal ===========================*/
 void main_menu(){
     int op;
     char ch, o=162;
@@ -274,7 +274,7 @@ void sobre(){
 
 
 /*============================== PROVEEDOR ==============================*/
-/*========================== Menú de Proveedor ==========================*/
+/*========================== MenÃº de Proveedor ==========================*/
 void proveedor(){
     int opp, u=163;
     do{
@@ -309,7 +309,7 @@ void proveedor(){
     while(opp!=5);
 }
 
-/*========================= Añadir Proveedor ==========================*/
+/*========================= AÃ±adir Proveedor ==========================*/
 void prove_entrada(){
     int id, op;
     char ch;
@@ -343,7 +343,7 @@ void prove_entrada(){
 			fprintf(fp,"\n");
 			system("cls");
 			printf("Proveedor a%cadido con %cxito",164, 130);
-			printf("Más proveedores [S/N]");
+			printf("MÃ¡s proveedores [S/N]");
 			ch=getche();
             if(ch=='S'){
 				system("cls");
@@ -354,7 +354,7 @@ void prove_entrada(){
     fclose(fp);
 }
 
-/*================ Actualizar Información del Proveedor ===============*/
+/*================ Actualizar InformaciÃ³n del Proveedor ===============*/
 void prove_actual(){
     int i, op;
     char ch;
@@ -517,7 +517,7 @@ void buscar_nombre(){
 
 
 /*============================== CLIENTE ==============================*/
-/*========================== Menú de Cliente ==========================*/
+/*========================== MenÃº de Cliente ==========================*/
 void cliente(){
     int opc, u=163;
     do{
@@ -552,7 +552,7 @@ void cliente(){
     while(opc!=5);
 }
 
-/*========================== Añadir Cliente ===========================*/
+/*========================== AÃ±adir Cliente ===========================*/
 void clien_entrada(){
     int op, id;
     char ch;
@@ -583,7 +583,7 @@ void clien_entrada(){
 			fprintf(fp,"\n");
 			system("cls");
 			printf("Cliente a%cadido con %cxito",164, 130);
-			printf("Más clientes [S/N]");
+			printf("MÃ¡s clientes [S/N]");
 			ch=getche();
             if(ch=='S'){
 				system("cls");
@@ -756,7 +756,7 @@ void buscar_cnombre(){
 
 
 /*============================ MEDICAMENTO ============================*/
-/*======================== Menú de Medicamento ========================*/
+/*======================== MenÃº de Medicamento ========================*/
 void medicina(){
     int opm, u=163;
     do{
@@ -848,7 +848,7 @@ void medi_entrada(){
 			fprintf(ptrp_r,"%s %s %s %d %.2f %.2f \n",p_r.medi_id,p_r.medir_nombre,p_r.prove_nombre,p_r.num,p_r.tasa,p_r.total);
 			system("cls");
 			printf("Medicamento a%cadido con %cxito",164, 130);
-			printf("Más medicamentos [S/N]");
+			printf("MÃ¡s medicamentos [S/N]");
 			ch=getche();
             if(ch=='S'){
 				system("cls");
@@ -929,7 +929,7 @@ void medi_venta(){
 		printf("*Precio pagado por el cliente = %.2f",b);
 		printf("*            Cantidad Vendida = %d",a);
 		getch();
-		printf("Más productos [S/N]");
+		printf("MÃ¡s productos [S/N]");
 			ch=getche();
             if(ch=='S'){
 				system("cls");
@@ -1098,7 +1098,7 @@ void ticket(){
 }
 
 /*============================== REPORTE ==============================*/
-/*========================== Menú de Reportes =========================*/
+/*========================== MenÃº de Reportes =========================*/
 void reporte_menu(){
     int opr;
 	do{
