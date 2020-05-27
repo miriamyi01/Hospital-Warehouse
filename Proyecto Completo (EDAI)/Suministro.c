@@ -1174,7 +1174,7 @@ void almacen(){
         printf("\n\n\tID \tProducto \tCantidad \tProveedor \tCaducidad ");
 		printf("\n\t==================================================================\n");
 		while((fread(&info,sizeof(info),1,ptr1))==1){
-			printf("\t%s",info.id);
+			printf("\n\t%s",info.id);
 			printf("\t%s",info.medi_nombre);
 			printf("\t   %d",info.cantidad);
 			printf("\t\t%s",info.prove_nombre);
@@ -1346,7 +1346,7 @@ void ganancia_rpt(){
 		printf("\t%d",g_r.num);
 		printf("\t\t%.2f",g_r.unidad);
 		printf("\t\t%.2f",g_r.sub);
-		printf("\t\t%.2f",g_r.ganancia);
+		printf("\t\t%.2f\n",g_r.ganancia);
     }
     getche();
 }
@@ -1378,11 +1378,11 @@ void venta_rpt_diaria(){
 		printf("\t\t%d",v_r.num);
 		printf("\t\t%.2f",v_r.sub);
 		printf("\t\t%.2f",v_r.total);
-		printf("\t%02d-%02d-%d",v_r.sDia,v_r.sMes,v_r.sAno);
+		printf("\t%02d-%02d-%d\n",v_r.sDia,v_r.sMes,v_r.sAno);
 		total=total+v_r.total;
 		}
 	   }
-	   printf("\n-----------------------------------------------------------------------------------------");
+	   printf("\n-------------------------------------------------------------------------------------------");
 	   printf("\n\t\t\t\t\t\t\t\t\tTotal: %.2f",total);
 	   getche();
 }
@@ -1413,11 +1413,11 @@ void com_rpt_diaria(){
             printf("\t\t%d",c_r.num);
             printf("\t\t%.2f",c_r.sub);
             printf("\t\t%.2f",c_r.total);
-            printf("\t%02d-%02d-%d",c_r.sDia,c_r.sMes,c_r.sAno);
+            printf("\t%02d-%02d-%d\n",c_r.sDia,c_r.sMes,c_r.sAno);
             total=total+c_r.total;
         }
     }
-    printf("\n-----------------------------------------------------------------------------------------");
+    printf("\n-------------------------------------------------------------------------------------------");
     printf("\n\t\t\t\t\t\t\t\t\tTotal: %.2f",total);
     getche();
 }
