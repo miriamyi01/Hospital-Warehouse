@@ -1043,9 +1043,9 @@ void medi_venta(){
 				fclose(ptrg_r);
             }
 		}
-		printf("\nID_Cliente   Nombre_Cliente");
+		printf("\n\t\t\tID_Cliente   Nombre_Cliente");
 		while(fscanf(ptr1,"%d %s %s %s %s",&info_c.clien_id,info_c.clien_nombre,info_c.mobil_no,info_c.lugar,info_c.email)!=EOF){
-			printf("\n   %d",info_c.clien_id);
+			printf("\n\t\t\t   %d",info_c.clien_id);
 			printf("\t\t%s",info_c.clien_nombre);
 			getch();
 		}
