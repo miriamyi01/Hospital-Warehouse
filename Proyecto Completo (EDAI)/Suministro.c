@@ -114,7 +114,7 @@ void linkfloat(){
 int t(void){
   time_t t=time(0);  /*Tiempo real*/
   struct tm*now=localtime(&t);
-	printf("\n\n\t\t\tFecha: %d/%02d/%02d", now->tm_mday,now->tm_mon+1,now->tm_year+1900);
+	printf("\n\n\t\t\tFecha: %02d/%02d/%d", now->tm_mday,now->tm_mon+1,now->tm_year+1900);
 	printf("\n\t\t\t Hora: %02d:%02d:%02d", now->tm_hour, now->tm_min,now->tm_sec);
 	return 0;
 }
@@ -938,7 +938,7 @@ void medi_entrada(){
 		if(ch=='1'){
 			fwrite(&info,sizeof(info),1,ptr);
 			fflush(stdin);
-			fprintf(ptrc_r,"%s %s %s %d %.2f %.2f %d %02d %02d\n",c_r.medi_id,c_r.medir_nombre,c_r.prove_nombre,c_r.num,c_r.sub,c_r.total,c_r.sDia,c_r.sMes,c_r.sAno);
+			fprintf(ptrc_r,"%s %s %s %d %.2f %.2f %02d %02d %d\n",c_r.medi_id,c_r.medir_nombre,c_r.prove_nombre,c_r.num,c_r.sub,c_r.total,c_r.sDia,c_r.sMes,c_r.sAno);
 			system("cls");
 			printf("\n\tMedicamento a%cadido con %cxito",164, 130);
 			printf("\n\t    M%cs datos [S/N]: ", 160);
@@ -1011,7 +1011,7 @@ void medi_venta(){
 				tic.mes=m;
 				tic.ano=an;
 
-				fprintf(fp,"%s %s %s %d %.2f %.2f %d %02d %02d\n",tic.ticketno,tic.cnombre,tic.medir_nombre,tic.medi_num,tic.medi_sub,tic.total,tic.dia,tic.mes,tic.ano);
+				fprintf(fp,"%s %s %s %d %.2f %.2f %02d %02d %d\n",tic.ticketno,tic.cnombre,tic.medir_nombre,tic.medi_num,tic.medi_sub,tic.total,tic.dia,tic.mes,tic.ano);
 				fflush(stdin);
 
 				fclose(fp);
@@ -1025,7 +1025,7 @@ void medi_venta(){
 				v_r.num=a;
 				v_r.sub=info.venta;
 				v_r.total=info.venta*a;
-				fprintf(ptrv_r,"%s %s %s %d %.2f %.2f %d %02d %02d\n",v_r.medi_id,v_r.medir_nombre,v_r.clien_nombre,v_r.num,v_r.sub,v_r.total,v_r.sDia,v_r.sMes,v_r.sAno);
+				fprintf(ptrv_r,"%s %s %s %d %.2f %.2f %02d %02d %d\n",v_r.medi_id,v_r.medir_nombre,v_r.clien_nombre,v_r.num,v_r.sub,v_r.total,v_r.sDia,v_r.sMes,v_r.sAno);
                 fflush(stdin);
                 fclose(ptrv_r);
 
@@ -1038,7 +1038,7 @@ void medi_venta(){
 				g_r.num=a;
 				g_r.sub=info.venta;
 				g_r.unidad=info.unidad;
-				fprintf(ptrg_r,"%s %s %d %02d %02d %d %.2f %.2f %.2f\n",g_r.medi_id,g_r.medir_nombre,g_r.sDia,g_r.sMes,g_r.sAno,g_r.num,g_r.unidad,g_r.sub,g_r.ganancia);
+				fprintf(ptrg_r,"%s %s %02d %02d %d %d %.2f %.2f %.2f\n",g_r.medi_id,g_r.medir_nombre,g_r.sDia,g_r.sMes,g_r.sAno,g_r.num,g_r.unidad,g_r.sub,g_r.ganancia);
 				fflush(stdin);
 				fclose(ptrg_r);
             }
@@ -1288,14 +1288,14 @@ void venta_rpt(){
     printf("\n\t\t\t\tREPORTE DE VENTAS\n\n");
     printf("ID \tPRODUCTO \tCLIENTE \tCANTIDAD \tSUBTOTAL \t TOTAL \tFECHA");
     printf("\n======================================================================================\n");
-    while(fscanf(ptrv_r,"%s %s %s %d %f %f %d %02d %02d\n",v_r.medi_id,v_r.medir_nombre,v_r.clien_nombre,&v_r.num,&v_r.sub,&v_r.total,&v_r.sDia,&v_r.sMes,&v_r.sAno)!=EOF){
+    while(fscanf(ptrv_r,"%s %s %s %d %f %f %02d %02d %d\n",v_r.medi_id,v_r.medir_nombre,v_r.clien_nombre,&v_r.num,&v_r.sub,&v_r.total,&v_r.sDia,&v_r.sMes,&v_r.sAno)!=EOF){
 		printf("%s",v_r.medi_id);
 		printf("\t%s",v_r.medir_nombre);
 		printf("\t%s",v_r.clien_nombre);
 		printf("\t\t%d",v_r.num);
 		printf("\t\t%.2f",v_r.sub);
 		printf("\t\t%.2f",v_r.total);
-		printf("\t%d-%02d-%02d\n",v_r.sDia,v_r.sMes,v_r.sAno);
+		printf("\t%02d-%02d-%d\n",v_r.sDia,v_r.sMes,v_r.sAno);
     }
     getche();
 }
@@ -1313,14 +1313,14 @@ void com_rpt(){
     printf("\n\t\t\t\tREPORTE DE COMPRAS\n\n");
     printf("ID \tPRODUCTO \tPROVEEDOR \tCANTIDAD \tSUBTOTAL \tTOTAL \tFECHA");
     printf("\n======================================================================================\n");
-    while(fscanf(ptrc_r,"%s %s %s %d %f %f %d %d02 %02d\n",c_r.medi_id,c_r.medir_nombre,c_r.prove_nombre,&c_r.num,&c_r.sub,&c_r.total,&c_r.sDia,&c_r.sMes,&c_r.sAno)!=EOF){
+    while(fscanf(ptrc_r,"%s %s %s %d %f %f %02d %02d %d\n",c_r.medi_id,c_r.medir_nombre,c_r.prove_nombre,&c_r.num,&c_r.sub,&c_r.total,&c_r.sDia,&c_r.sMes,&c_r.sAno)!=EOF){
 		printf("%s",c_r.medi_id);
 		printf("\t%s",c_r.medir_nombre);
 		printf("\t%s",c_r.prove_nombre);
 		printf("\t\t%d",c_r.num);
 		printf("\t\t%.2f",c_r.sub);
 		printf("\t\t%.2f",c_r.total);
-		printf("\t%d-%02d-%02d\n",c_r.sDia,c_r.sMes,c_r.sAno);
+		printf("\t%02d-%02d-%d\n",c_r.sDia,c_r.sMes,c_r.sAno);
     }
     getche();
 }
@@ -1337,10 +1337,10 @@ void ganancia_rpt(){
     printf("\n\t\t\t\t\tREPORTE DE GANANCIAS\n\n");
     printf("ID \tPRODUCTO \tFECHA \t\tCANTIDAD \tPRECIO UNTARIO \tPRECIO VENTA \tGANANCIA");
     printf("\n=================================================================================================\n");
-    while(fscanf(ptrg_r,"%s %s %d %02d %02d %d %f %f %f \n",g_r.medi_id,g_r.medir_nombre,&g_r.sDia,&g_r.sMes,&g_r.sAno,&g_r.num,&g_r.unidad,&g_r.sub,&g_r.ganancia)!=EOF){
+    while(fscanf(ptrg_r,"%s %s %02d %02d %d %d %f %f %f \n",g_r.medi_id,g_r.medir_nombre,&g_r.sDia,&g_r.sMes,&g_r.sAno,&g_r.num,&g_r.unidad,&g_r.sub,&g_r.ganancia)!=EOF){
 		printf("%s",g_r.medi_id);
 		printf("\t%s",g_r.medir_nombre);
-		printf("\t%d-%02d-%02d",g_r.sDia,g_r.sMes,g_r.sAno);
+		printf("\t%02d-%02d-%d",g_r.sDia,g_r.sMes,g_r.sAno);
 		printf("\t%d",g_r.num);
 		printf("\t\t%.2f",g_r.unidad);
 		printf("\t\t%.2f",g_r.sub);
@@ -1368,7 +1368,7 @@ void venta_rpt_diaria(){
     printf("\n\t\t\t\tREPORTE DE VENTAS\n\n");
     printf("ID \tPRODUCTO \tCLIENTE \tCANTIDAD \tSUBTOTAL \t TOTAL \tFECHA");
     printf("\n=========================================================================================\n");
-    while(fscanf(ptrv_r,"%s %s %s %d %f %f %d %02d %02d\n",v_r.medi_id,v_r.medir_nombre,v_r.clien_nombre,&v_r.num,&v_r.sub,&v_r.total,&v_r.sDia,&v_r.sMes,&v_r.sAno)!=EOF){
+    while(fscanf(ptrv_r,"%s %s %s %d %f %f %02d %02d %d\n",v_r.medi_id,v_r.medir_nombre,v_r.clien_nombre,&v_r.num,&v_r.sub,&v_r.total,&v_r.sDia,&v_r.sMes,&v_r.sAno)!=EOF){
 		if(d==v_r.sDia &&m==v_r.sMes &&an==v_r.sAno){
 		printf("%s",v_r.medi_id);
 		printf("\t%s",v_r.medir_nombre);
@@ -1376,7 +1376,7 @@ void venta_rpt_diaria(){
 		printf("\t\t%d",v_r.num);
 		printf("\t\t%.2f",v_r.sub);
 		printf("\t\t%.2f",v_r.total);
-		printf("\t%d-%02d-%02d",v_r.sDia,v_r.sMes,v_r.sAno);
+		printf("\t%02d-%02d-%d",v_r.sDia,v_r.sMes,v_r.sAno);
 		total=total+v_r.total;
 		}
 	   }
@@ -1403,7 +1403,7 @@ void com_rpt_diaria(){
     printf("\n\t\t\t\tREPORTE DE COMPRAS\n\n");
     printf("ID \tPRODUCTO \tPROVEEDOR \tCANTIDAD \tSUBTOTAL \tTOTAL \tFECHA");
     printf("\n=========================================================================================\n");
-    while(fscanf(ptrc_r,"%s %s %s %d %f %f %d %02d %02d\n",c_r.medi_id,c_r.medir_nombre,c_r.prove_nombre,&c_r.num,&c_r.sub,&c_r.total,&c_r.sDia,&c_r.sMes,&c_r.sAno)!=EOF){
+    while(fscanf(ptrc_r,"%s %s %s %d %f %f %02d %02d %d\n",c_r.medi_id,c_r.medir_nombre,c_r.prove_nombre,&c_r.num,&c_r.sub,&c_r.total,&c_r.sDia,&c_r.sMes,&c_r.sAno)!=EOF){
         if(d==c_r.sDia &&m==c_r.sMes &&an==c_r.sAno){
             printf("%s",c_r.medi_id);
             printf("\t%s",c_r.medir_nombre);
@@ -1411,7 +1411,7 @@ void com_rpt_diaria(){
             printf("\t\t%d",c_r.num);
             printf("\t\t%.2f",c_r.sub);
             printf("\t\t%.2f",c_r.total);
-            printf("\t%d-%02d-%02d",c_r.sDia,c_r.sMes,c_r.sAno);
+            printf("\t%02d-%02d-%d",c_r.sDia,c_r.sMes,c_r.sAno);
             total=total+c_r.total;
         }
     }
