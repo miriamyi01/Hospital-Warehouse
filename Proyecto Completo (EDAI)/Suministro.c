@@ -413,7 +413,7 @@ void prove_actual(){
     printf("\n\n\t\tMODIFICAR PROVEEDOR");
     printf("\n\n\tIntroduce el ID del proveedor: ");
     scanf("%d",&pid);
-    ft=fopen("info.dat","w");
+    ft=fopen("infos.dat","w");
     if(ft==NULL){
         printf("\n\t No hay registro");
         exit(1);
@@ -437,9 +437,10 @@ void prove_actual(){
                 ch=getch();
                 if(ch=='1'){
                     fprintf(ft,"%d %s %s %s %s\n",infos.prove_id, infos.prove_nombre, infos.lugar, infos.mobil_no, infos.email);
-                    printf("Actualizaci%cn exitosa", 162);
+                    printf("\nActualizaci%cn exitosa", 162);
                     remove("proveedor.dat");
-                    rename("info.dat","proveedor.dat");
+                    rename("infos.dat","proveedor.dat");
+                    getch();
                 }
             }
             else{
@@ -685,9 +686,10 @@ void clien_actual(){
                 ch=getch();
                 if(ch=='1'){
                     fprintf(ft,"%d %s %s %s %s\n",info_c.clien_id, info_c.clien_nombre, info_c.mobil_no, info_c.lugar,info_c.email);
-                    printf("Actualizaci%cn exitosa", 162);
+                    printf("\nActualizaci%cn exitosa", 162);
                     remove("cliente.dat");
                     rename("info.dat","cliente.dat");
+                    getch();
                 }
         }
             else{
@@ -1213,7 +1215,7 @@ void ticket(){
         printf("%d-%d-%d",d,m,an);
         printf("\n\n No \tProducto \tCliente     Cantidad \tSub \t  Total");
         printf("\n-----------------------------------------------------------------\n");
-        while(fscanf(ptrticket,"%s %s %s %d %f %f %d %d %d",tic.ticketno,tic.cnombre,tic.medir_nombre,&tic.medi_num,&tic.medi_sub,&tic.total,&tic.dia,&tic.mes,&tic.ano)!=EOF){
+        while(fscanf(ptrticket,"%s %s %s %d %f %f %02d %02d %d",tic.ticketno,tic.cnombre,tic.medir_nombre,&tic.medi_num,&tic.medi_sub,&tic.total,&tic.dia,&tic.mes,&tic.ano)!=EOF){
             do{
                 if(strcmp(id,tic.ticketno)==0){
                     printf(" %d",j);
