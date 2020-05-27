@@ -1043,10 +1043,10 @@ void medi_venta(){
 				fclose(ptrg_r);
             }
 		}
-		printf("ID_Cliente   Nombre_Cliente");
+		printf("\nID_Cliente   Nombre_Cliente");
 		while(fscanf(ptr1,"%d %s %s %s %s",&info_c.clien_id,info_c.clien_nombre,info_c.mobil_no,info_c.lugar,info_c.email)!=EOF){
-			printf("%d",info_c.clien_id);
-			printf("%s",info_c.clien_nombre);
+			printf("\n   %d",info_c.clien_id);
+			printf("\t\t%s",info_c.clien_nombre);
 			getch();
 		}
 		if (cont==0){
@@ -1286,8 +1286,8 @@ void venta_rpt(){
     system("cls");
     printf("Presiona cualquier tecla para regresar al MENU\n\n");
     printf("\n\t\t\t\tREPORTE DE VENTAS\n\n");
-    printf("ID \tPRODUCTO \tCLIENTE \tCANTIDAD \tSUBTOTAL \t TOTAL \tFECHA");
-    printf("\n======================================================================================\n");
+    printf("ID \tPRODUCTO \tCLIENTE \tCANTIDAD \tSUBTOTAL \t TOTAL \t  FECHA");
+    printf("\n===========================================================================================\n");
     while(fscanf(ptrv_r,"%s %s %s %d %f %f %02d %02d %d\n",v_r.medi_id,v_r.medir_nombre,v_r.clien_nombre,&v_r.num,&v_r.sub,&v_r.total,&v_r.sDia,&v_r.sMes,&v_r.sAno)!=EOF){
 		printf("%s",v_r.medi_id);
 		printf("\t%s",v_r.medir_nombre);
@@ -1311,8 +1311,8 @@ void com_rpt(){
     system("cls");
     printf("Presiona cualquier ENTER para regresar al MENU\n\n");
     printf("\n\t\t\t\tREPORTE DE COMPRAS\n\n");
-    printf("ID \tPRODUCTO \tPROVEEDOR \tCANTIDAD \tSUBTOTAL \tTOTAL \tFECHA");
-    printf("\n======================================================================================\n");
+    printf("ID \tPRODUCTO \tPROVEEDOR \tCANTIDAD \tSUBTOTAL \tTOTAL \t  FECHA");
+    printf("\n===========================================================================================\n");
     while(fscanf(ptrc_r,"%s %s %s %d %f %f %02d %02d %d\n",c_r.medi_id,c_r.medir_nombre,c_r.prove_nombre,&c_r.num,&c_r.sub,&c_r.total,&c_r.sDia,&c_r.sMes,&c_r.sAno)!=EOF){
 		printf("%s",c_r.medi_id);
 		printf("\t%s",c_r.medir_nombre);
@@ -1366,8 +1366,8 @@ void venta_rpt_diaria(){
     system("cls");
     printf("Presiona cualquier tecla para regresar al MENU\n\n");
     printf("\n\t\t\t\tREPORTE DE VENTAS\n\n");
-    printf("ID \tPRODUCTO \tCLIENTE \tCANTIDAD \tSUBTOTAL \t TOTAL \tFECHA");
-    printf("\n=========================================================================================\n");
+    printf("ID \tPRODUCTO \tCLIENTE \tCANTIDAD \tSUBTOTAL \t TOTAL \t  FECHA");
+    printf("\n===========================================================================================\n");
     while(fscanf(ptrv_r,"%s %s %s %d %f %f %02d %02d %d\n",v_r.medi_id,v_r.medir_nombre,v_r.clien_nombre,&v_r.num,&v_r.sub,&v_r.total,&v_r.sDia,&v_r.sMes,&v_r.sAno)!=EOF){
 		if(d==v_r.sDia &&m==v_r.sMes &&an==v_r.sAno){
 		printf("%s",v_r.medi_id);
@@ -1401,8 +1401,8 @@ void com_rpt_diaria(){
     system("cls");
     printf("Presiona cualquier ENTER para regresar al MENU\n\n");
     printf("\n\t\t\t\tREPORTE DE COMPRAS\n\n");
-    printf("ID \tPRODUCTO \tPROVEEDOR \tCANTIDAD \tSUBTOTAL \tTOTAL \tFECHA");
-    printf("\n=========================================================================================\n");
+    printf("ID \tPRODUCTO \tPROVEEDOR \tCANTIDAD \tSUBTOTAL \tTOTAL \t  FECHA");
+    printf("\n===========================================================================================\n");
     while(fscanf(ptrc_r,"%s %s %s %d %f %f %02d %02d %d\n",c_r.medi_id,c_r.medir_nombre,c_r.prove_nombre,&c_r.num,&c_r.sub,&c_r.total,&c_r.sDia,&c_r.sMes,&c_r.sAno)!=EOF){
         if(d==c_r.sDia &&m==c_r.sMes &&an==c_r.sAno){
             printf("%s",c_r.medi_id);
