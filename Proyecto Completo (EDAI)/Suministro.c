@@ -475,7 +475,7 @@ void prove_lista(){
 		printf("\t%s",infos.prove_nombre);
 		printf("\t%s",infos.lugar);
 		printf("   %s",infos.mobil_no);
-		printf("\t%s",infos.email);
+		printf("  %s",infos.email);
     }
     getche();
 }
@@ -525,7 +525,7 @@ void buscar_id(){
             printf("\t%s",infos.prove_nombre);
             printf("\t%s",infos.lugar);
             printf("   %s",infos.mobil_no);
-            printf("\t%s",infos.email);
+            printf("  %s",infos.email);
 			break;
 		}
     }
@@ -556,7 +556,7 @@ void buscar_nombre(){
             printf("\t%s",infos.prove_nombre);
             printf("\t%s",infos.lugar);
             printf("   %s",infos.mobil_no);
-            printf("\t%s",infos.email);
+            printf("  %s",infos.email);
 			break;
         }
     }
@@ -724,7 +724,7 @@ void clien_lista(){
         printf("\t%s",info_c.clien_nombre);
         printf("\t%s",info_c.lugar);
         printf("   %s",info_c.mobil_no);
-        printf("\t%s",info_c.email);
+        printf("  %s",info_c.email);
     }
     getche();
 }
@@ -774,7 +774,7 @@ void buscar_cid(){
             printf("\t%s",info_c.clien_nombre);
             printf("\t%s",info_c.lugar);
             printf("   %s",info_c.mobil_no);
-            printf("\t%s",info_c.email);
+            printf("  %s",info_c.email);
 			break;
 		}
     }
@@ -805,7 +805,7 @@ void buscar_cnombre(){
             printf("\t%s",info_c.clien_nombre);
             printf("\t%s",info_c.lugar);
             printf("   %s",info_c.mobil_no);
-            printf("\t%s",info_c.email);
+            printf("  %s",info_c.email);
 			break;
         }
     }
