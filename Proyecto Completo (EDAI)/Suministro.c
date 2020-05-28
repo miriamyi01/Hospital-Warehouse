@@ -1049,8 +1049,8 @@ void medi_venta(){
 		while(fscanf(ptr1,"%d %s %s %s %s",&info_c.clien_id,info_c.clien_nombre,info_c.mobil_no,info_c.lugar,info_c.email)!=EOF){
 			printf("\n\t\t\t   %d",info_c.clien_id);
 			printf("\t\t%s",info_c.clien_nombre);
-			getch();
 		}
+		getch();
 		if (cont==0){
 			system("cls");
 			printf("No hay en existencia");
