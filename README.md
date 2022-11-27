@@ -1,2 +1,2 @@
-# Almácen para hospital
-Proyecto para el control de almacen de un hospital
+# Hospital warehouse
+Warehouse control project for a hospital
